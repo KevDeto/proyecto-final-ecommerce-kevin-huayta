@@ -4,39 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icons=search,local_shipping,credit_card,lock,shopping_cart,account_circle" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+
     <title>Document</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header-container">
         <!-- Primera fila del header -->
         <div class="header-top">
             <div class="header-logo">
                 <a href="#">
-                    <img src="image/logo-2.png" alt="Logo de la tienda" width="180">
+                    <img src="image/logo-2.png" alt="Logo de la tienda">
                 </a>
             </div>
-            <!--
-            <div class="header-social">
-                <a href="#" aria-label="Facebook">
-                    <img src="image/s1.svg" alt="Facebook">
-                </a>
-                <a href="#" aria-label="Twitter">
-                    <img src="image/s2.svg" alt="Twitter">
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <img src="image/s3.svg" alt="Instagram">
-                </a>
-            </div>
-            -->
+
             <form role="search" class="search-form">
                 <div class="search-container">
-                    <span class="search-icon material-symbols-outlined">search</span>
-                    <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos"
-                        class="search-input">
+                    <span class="material-symbols-outlined" id="search-icon">search</span>
+                    <input class="search-input" type="search" placeholder="Buscar productos..."
+                        aria-label="Buscar productos">
                 </div>
             </form>
 
@@ -44,8 +36,15 @@
 
             <nav class="header-user-nav" aria-label="Navegación de usuario">
                 <ul>
-                    <li><a href="#">Mi Cuenta</a></li>
-                    <li><a href="#">Carrito</a></li>
+                    <li>
+                        <a href="#">
+                            <!--<span class="material-symbols-outlined" id="account-icon">account_circle</span>-->
+                            <span>Crear Cuenta</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="material-symbols-outlined" id="cart-icon">shopping_cart</span></a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -65,11 +64,106 @@
         </nav>
     </header>
     <main>
+        <section class="banner-descuentos">
+            <!-- Slider main container -->
+            <div class="swiper swiper-descuentos">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper descuentos-container">
+                    <!-- Slides -->
+                    <div class="swiper-slide tarjeta-descuento">
+                        <img src="image/descuento-1.jpg" alt="imagen-descuento">
+                    </div>
+                    <div class="swiper-slide tarjeta-descuento">
+                        <img src="image/descuento-2.jpg" alt="imagen-descuento">
+                    </div>
+                    <div class="swiper-slide tarjeta-descuento">
+                        <img src="image/descuento-3.jpg" alt="imagen-descuento">
+                    </div>
+                    <div class="swiper-slide tarjeta-descuento">
+                        <img src="image/descuento-4.jpg" alt="imagen-descuento">
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+        <section class="bienvenida-container">
+            <h2 class="mensaje">Instrumentos Musicales y Audio Profesional</h2>
+        </section>
+        <section class="banner-informacion">
+            <div class="swiper swiper-informacion">
+                <div class="swiper-wrapper informacion-container">
+                    <div class="swiper-slide tarjeta-informacion">
+                        <div class="columna-icono">
+                            <span class="material-symbols-outlined" id="shipping-icon">local_shipping</span>
+                        </div>
+                        <div class="columna-descripcion">
+                            <h3>ENVIOS</h3>
+                            <p>Realizamos envíos a todo el País de todos nuestros productos. También podés retirar en
+                                nuestro Showroom de Microcentro, CABA.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide tarjeta-informacion">
+                        <div class="columna-icono">
+                            <span class="material-symbols-outlined" id="card-icon">credit_card</span>
+                        </div>
+                        <div class="columna-descripcion">
+                            <h3>CUOTAS SIN INTERES</h3>
+                            <p>Podés abonar hasta 9 cuotas sin interés en todos nuestros productos. Podés combinar
+                                tarjetas para tus pagos para aumentar tu poder de compra.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide tarjeta-informacion">
+                        <div class="columna-icono">
+                            <span class="material-symbols-outlined" id="lock-icon">lock</span>
+                        </div>
+                        <div class="columna-descripcion">
+                            <h3>COMPRA SEGURA</h3>
+                            <p>Somos representantes y distribuidores oficiales de las marcas más importantes del
+                                mercado. Todos los productos tienen garantía oficial.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide tarjeta-informacion">
+                        <div class="columna-icono">
+                            <i class="fa-brands fa-whatsapp fa-xl" id="whatsapp-icon"></i>
+                        </div>
+                        <div class="columna-descripcion">
+                            <h3>ASESORAMIENTO</h3>
+                            <p>Comunicate con nuestro Whatsapp para asesorarte con nuestros ingenieros de venta para
+                                elegir el productos que buscas.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <!--
+            <div class="header-social">
+                <a href="#" aria-label="Facebook">
+                    <img src="image/s1.svg" alt="Facebook">
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <img src="image/s2.svg" alt="Twitter">
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <img src="image/s3.svg" alt="Instagram">
+                </a>
+            </div>
+            -->
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
