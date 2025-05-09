@@ -7,9 +7,12 @@
     /* #2a0441 */
     --color-fondo: #07000e;
     /* #190c25 */
+    --font-input: 18px;
+
+    --font-titulo-card: 16px --font-descripcion: 12px;
 }
 
-/* Reset y estilos base */
+/*==========RESET Y ESTILOS BASE==========*/
 * {
     margin: 0;
     padding: 0;
@@ -21,33 +24,53 @@ body {
     background-color: var(--color-fondo);
 }
 
-
-/*PRIMERA PARTE DE LA PAGINA WEB*/
-
-/* Header principal */
-.header-container {
-    background-color: var(--color-header);
-}
-
-/* Parte superior del header */
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+header,
+main,
+footer {
     max-width: 1356px;
     margin: 0 auto;
 }
 
-/* Logo */
-.header-logo img {
-    width: 180px;
-    max-width: 100%;
-    height: auto;
+/*==========HEADER TOP==========*/
+.header-top-container {
+    padding: 1rem;
 }
 
-/* Barra de busqueda*/
-.search-container {
+.header-top-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+/*GRID EN COLUMNA UNO, DOS Y TRES*/
+.header-top-container .logo-container a,
+.header-top-container .logo-container a img {
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.header-top-container .formulario-container,
+.header-top-container .usuario-container,
+.header-top-container .usuario-container ul,
+.header-top-container .usuario-container ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-top-container .usuario-container ul {
+    list-style-type: none;
+    gap: 30px;
+}
+
+.header-top-container .usuario-container ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*BARRA DE BUSQUEDA*/
+.header-top-container .formulario-container .search-container {
     width: max-content;
     display: flex;
     align-items: center;
@@ -57,11 +80,11 @@ body {
     transition: box-shadow 0.25s;
 }
 
-.search-container::focus-within {
+.header-top-container .formulario-container .search-container::focus-within {
     box-shadow: 0 0 2px var(--color-header);
 }
 
-.search-input {
+.header-top-container .formulario-container .search-container .search-input {
     font-size: 18px;
     font-family: 'Lexend', sans-serif;
     color: #333333;
@@ -73,47 +96,20 @@ body {
     border: transparent;
 }
 
-.search-input::placeholder,
-#search-icon {
+.header-top-container .formulario-container .search-container .search-input::placeholder,
+.header-top-container .formulario-container .search-container .search-input #search-icon {
     color: var(--color-header);
 }
 
-/* Redes sociales */
-/*.header-social {
-    display: flex;
-    gap: 1rem;
-}
 
-.header-social a {
-    display: block;
-    width: 32px;
-    height: 32px;
-}*/
-
-/* Navegacion de usuario */
-.header-user-nav ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-.header-user-nav ul li a {
-    display: flex;
-    gap: 5px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-
-
-/* Navegacion principal */
-.header-main-nav {
+/*==========HEADER BOTTOM==========*/
+.header-bottom-container {
     background-color: var(--color-nav);
     padding: 1rem;
     text-transform: uppercase;
 }
 
-.header-main-nav ul {
+.header-bottom-container ul {
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -122,202 +118,9 @@ body {
     margin: 0 auto;
 }
 
-.header-main-nav a {
+.header-bottom-container a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
 }
-
-
-
-/*PARTE DOS DE LA PAGINA WEB*/
-
-/*Descuentos*/
-
-/* Contenedor principal */
-.banner-descuentos {
-  padding: 2rem 0;
-}
-
-/* swiper descuentos*/
-.swiper-descuentos {
-  
-  position: relative;
-  max-width: 1356px;
-  margin: 0 auto;
-  overflow: hidden;
-  height: auto;
-  padding: 0 20px;
-}
-
-/* contenedor de slides*/
-.swiper-descuentos .swiper-wrapper {
-  box-sizing: border-box;
-  height: 100%;
-  align-items: stretch;
-}
-
-/* Tarjetas de descuento*/
-.tarjeta-descuento {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.tarjeta-descuento:hover {
-  transform: scale(0.98); /* Efecto hover sutil */
-}
-
-.tarjeta-descuento img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  aspect-ratio: 16/9;
-}
-
-/* Flechas del swiper*/
-.swiper-button-next,
-.swiper-button-prev {
-  width: 40px;
-  height: 40px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  color: white;
-  transition: opacity 0.3s ease;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 24px;
-}
-
-/* Bullets del swiper*/
-.swiper-pagination-bullet {
-  background: #ccc;
-  opacity: 1;
-  width: 10px;
-  height: 10px;
-}
-
-.swiper-pagination-bullet-active {
-  background: #2a5ee7;
-}
-
-
-/*PARTE 3, BANNER DE SALUDO*/
-.bienvenida-container {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    margin: 0 auto;
-    max-width: 1356px;
-}
-
-.mensaje {
-    color: #ffffff;
-    font-size: 28px;
-}
-
-/* PARTE 4 BANNER DE INFORMACION */
-.banner-informacion {
-    width: 100%;
-    max-width: 1356px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.banner-informacion .swiper-informacion {
-    position: relative;
-    overflow: visible;
-    max-width: 1356px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 8px;
-}
-
-/* Contenedor de tarjetas */
-.banner-informacion .swiper-informacion .informacion-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 100%;
-    transform: none;
-    position: relative;
-    left: 0;
-}
-
-/* Tarjeta */
-.banner-informacion .swiper-slide.tarjeta-informacion {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background: var(--color-fondo);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px #ffffff2a;
-    padding: 15px;
-    width: 23.5%;
-    min-width: 0;
-    height: auto;
-    margin: 0;
-}
-
-/* Icono */
-.columna-icono {
-    margin-right: 14px;
-    flex-shrink: 0;
-}
-
-.columna-descripcion {
-    flex: 1;
-    min-width: 0;
-}
-
-.columna-icono .material-symbols-outlined,
-.columna-icono #whatsapp-icon {
-    font-size: 25px;
-    color: #2a5ee7;
-}
-
-.columna-descripcion h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    /*color: #333;*/
-    color: #ffffff;
-    white-space: normal;
-}
-
-.columna-descripcion p {
-    font-size: 12px;
-    line-height: 1.4;
-    /*color: #666;*/
-    color: #ffffff;
-    margin: 0;
-    white-space: normal;
-}
-
-/* Quita las flechas del swiper y lo demas */
-.banner-informacion .swiper-pagination,
-.banner-informacion .swiper-button-prev,
-.banner-informacion .swiper-button-next {
-    display: none !important;
-}
-
-/* PARTE DE LOS PRODUCTOS */
-.titulo-productos{
-    color: white;
-    max-width: 1356px;
-    margin: 0 auto;
-    padding: 2rem 2rem;
-}
-
-
