@@ -227,12 +227,15 @@ footer {
 
 .section-informacion .informacion-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
-.section-informacion .informacion-container .card-informacion {
+.section-informacion .informacion-container .card-informacion,
+.section-informacion .informacion-container .card-informacion .columna-descripcion {
     display: flex;
+}
+.section-informacion .informacion-container .card-informacion {
     align-items: center;
     color: #ffffff;
     padding: 15px;
@@ -243,7 +246,6 @@ footer {
 }
 
 .section-informacion .informacion-container .card-informacion .columna-descripcion {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
