@@ -1,21 +1,18 @@
 const swiper = new Swiper('.swiper-descuentos', {
-    // Optional parameters
-    slidesPerview: 1,
-    direction: 'horizontal',
-    spaceBetween: 20,
-    loop: true,
+  slidesPerView: 2,
+  direction: 'horizontal',
+  spaceBetween: 20,
+  loop: true,
 
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
 });
 
 
