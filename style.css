@@ -9,7 +9,11 @@
     /* #190c25 */
     --font-input: 18px;
 
-    --font-titulo-card: 16px --font-descripcion: 12px;
+    --font-titulo-card: 16px;
+    
+    --font-descripcion: 12px;
+
+    --font-titulo: 28px;
 }
 
 /*==========RESET Y ESTILOS BASE==========*/
@@ -157,11 +161,11 @@ footer {
     cursor: pointer;
 }
 
-.section-descuentos .swiper-descuentos .swiper-wrapper .card-descuento:hover{
+.section-descuentos .swiper-descuentos .swiper-wrapper .card-descuento:hover {
     transform: scale(0.98);
 }
 
-.section-descuentos .swiper-descuentos .swiper-wrapper .card-descuento img{
+.section-descuentos .swiper-descuentos .swiper-wrapper .card-descuento img {
     display: block;
     width: 100%;
     height: 100%;
@@ -173,7 +177,7 @@ footer {
 
 /*flechitas*/
 .section-descuentos .swiper-descuentos .swiper-button-prev,
-.section-descuentos .swiper-descuentos .swiper-button-next{
+.section-descuentos .swiper-descuentos .swiper-button-next {
     width: 40px;
     height: 40px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -183,18 +187,33 @@ footer {
 }
 
 .section-descuentos .swiper-descuentos .swiper-button-prev::after,
-.section-descuentos .swiper-descuentos .swiper-button-next::after{
+.section-descuentos .swiper-descuentos .swiper-button-next::after {
     font-size: 24px;
 }
 
 /*bullets o paginas*/
-.section-descuentos .swiper-descuentos .swiper-pagination-bullet{
+.section-descuentos .swiper-descuentos .swiper-pagination-bullet {
     background-color: #cccccc;
     opacity: 1;
     width: 10px;
     height: 10px;
 }
 
-.section-descuentos .swiper-descuentos .swiper-pagination-bullet-active{
+.section-descuentos .swiper-descuentos .swiper-pagination-bullet-active {
     background-color: #2a5ee7;
+}
+
+/*==========MAIN SECTION BIENVENIDA==========*/
+.section-bienvenida {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1356px;
+}
+
+.section-bienvenida h2 {
+    color: #ffffff;
+    font-size: var(--font-titulo);
 }
