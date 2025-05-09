@@ -10,7 +10,7 @@
     --font-input: 18px;
 
     --font-titulo-card: 16px;
-    
+
     --font-descripcion: 12px;
 
     --font-titulo: 28px;
@@ -217,3 +217,49 @@ footer {
     color: #ffffff;
     font-size: var(--font-titulo);
 }
+
+/*==========MAIN SECTION INFORMACION==========*/
+.section-informacion {
+    width: 100%;
+    height: 200px;
+    padding: 2rem 0;
+}
+
+.section-informacion .informacion-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.section-informacion .informacion-container .card-informacion {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 2px 10px #ffffff2a;
+    border-radius: 8px;
+    height: 135px;
+    gap: 14px;
+}
+
+.section-informacion .informacion-container .card-informacion .columna-descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section-informacion .informacion-container .card-informacion .columna-icono {
+    align-self: start;
+}
+
+.section-informacion .informacion-container .card-informacion .columna-descripcion h3 {
+    font-size: 14px;
+}
+
+.section-informacion .informacion-container .card-informacion .columna-descripcion p {
+    font-size: 12px;
+    display: flex;
+    justify-content: end;
+}
+
