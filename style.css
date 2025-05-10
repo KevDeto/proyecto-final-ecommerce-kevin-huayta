@@ -31,13 +31,20 @@ body {
 header,
 main,
 footer {
-    max-width: 1356px;
+    max-width: 1357px;
     margin: 0 auto;
+}
+
+header {
+    background-color: var(--color-fondo);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 /*==========HEADER TOP==========*/
 .header-top-container {
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 .header-top-container {
@@ -109,7 +116,7 @@ footer {
 /*==========HEADER BOTTOM==========*/
 .header-bottom-container {
     background-color: var(--color-nav);
-    padding: 1rem;
+    padding: 1rem 0;
     text-transform: uppercase;
 }
 
@@ -127,30 +134,36 @@ footer {
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
+    border: transparent;
+    transition: all 0.3s;
+}
+
+.header-bottom-container a:hover {
+    border-bottom: 3px solid #3b04d480;/*#ffffff83*/
 }
 
 /*==========MAIN SECTION DESCUENTOS==========*/
 
+.section-marcas,
 .section-descuentos {
     padding: 2rem 0;
 }
 
 .section-descuentos .swiper-descuentos {
     position: relative;
-    max-width: 1356px;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    height: auto;
-    padding: 0 20px;
+    height: 380px;
 }
 
-.section-descuentos .swiper-descuentos .swiper-wrapper {
+.section-descuentos .swiper-descuentos .descuentos-container {
     box-sizing: border-box;
     height: 100%;
     align-items: stretch;
 }
 
-.section-descuentos .swiper-descuentos .swiper-wrapper .card-descuento {
+.section-descuentos .swiper-descuentos .descuentos-container .card-descuento {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -161,11 +174,11 @@ footer {
     cursor: pointer;
 }
 
-.section-descuentos .swiper-descuentos .swiper-wrapper .card-descuento:hover {
+.section-descuentos .swiper-descuentos .descuentos-container .card-descuento:hover {
     transform: scale(0.98);
 }
 
-.section-descuentos .swiper-descuentos .swiper-wrapper .card-descuento img {
+.section-descuentos .swiper-descuentos .descuentos-container .card-descuento img {
     display: block;
     width: 100%;
     height: 100%;
@@ -183,7 +196,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     color: #ffffff;
-    transition: opacity o.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .section-descuentos .swiper-descuentos .swiper-button-prev::after,
@@ -192,7 +205,7 @@ footer {
 }
 
 /*bullets o paginas*/
-.section-descuentos .swiper-descuentos .swiper-pagination-bullet {
+/*.section-descuentos .swiper-descuentos .swiper-pagination-bullet {
     background-color: #cccccc;
     opacity: 1;
     width: 10px;
@@ -202,7 +215,7 @@ footer {
 .section-descuentos .swiper-descuentos .swiper-pagination-bullet-active {
     background-color: #2a5ee7;
 }
-
+*/
 /*==========MAIN SECTION BIENVENIDA==========*/
 .section-bienvenida {
     display: flex;
@@ -235,6 +248,7 @@ footer {
 .section-informacion .informacion-container .card-informacion .columna-descripcion {
     display: flex;
 }
+
 .section-informacion .informacion-container .card-informacion {
     align-items: center;
     color: #ffffff;
@@ -265,3 +279,57 @@ footer {
     justify-content: end;
 }
 
+/*==========MAIN SECTION MARCAS==========*/
+.section-marcas .swiper-marcas {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 250px;
+}
+
+.section-marcas .swiper-marcas .marcas-container {
+    box-sizing: border-box;
+    height: 100%;
+    align-items: stretch;
+}
+
+.section-marcas .swiper-marcas .marcas-container .card-marca {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.section-marcas .swiper-marcas .marcas-container .card-marca:hover {
+    transform: scale(0.98);
+}
+
+.section-marcas .swiper-marcas .marcas-container .card-marca img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*mantiene la relacion de aspecto*/
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/*flechitas*/
+.section-marcas .swiper-marcas .swiper-button-prev,
+.section-marcas .swiper-marcas .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #ffffff;
+    transition: opacity 0.3s ease;
+}
+
+.section-marcas .swiper-marcas .swiper-button-prev::after,
+.section-marcas .swiper-marcas .swiper-button-next::after {
+    font-size: 24px;
+}

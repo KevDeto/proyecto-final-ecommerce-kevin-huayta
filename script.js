@@ -1,19 +1,76 @@
 const swiper = new Swiper('.swiper-descuentos', {
-  slidesPerView: 2,
+  slidesPerView: 1,/* si coloco 4 se desabilita el swiper, podria usar esto para responsive */
   direction: 'horizontal',
-  spaceBetween: 20,
+  spaceBetween: 0,
   loop: true,
+  autoplay: {
+    delay: 4500,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    }
+  }
+});
 
+const swiper2 = new Swiper('.swiper-marcas', {
+  slidesPerView: 1,/* si coloco 4 se desabilita el swiper, podria usar esto para responsive */
+  direction: 'horizontal',
+  spaceBetween: 0,
+  loop: true,
+  autoplay: {
+    delay: 4500,
+  },
   pagination: {
     el: '.swiper-pagination',
-    clickable: true,
+    clickable: false,
   },
 
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 10
+    }
   }
 });
+
+/*
+const swiper = new Swiper('.swiper-descuentos', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30
+    }
+  }
+});*/
 
 
 
