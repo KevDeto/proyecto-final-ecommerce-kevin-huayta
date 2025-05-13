@@ -11,20 +11,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 
-    <title>Document</title>
+    <title>Music Store</title>
 </head>
 
 <body>
     <header class="header-container">
-        <!-- Primera fila del header -->
-        <div class="header-top">
-            <div class="header-logo">
+        <div class="header-top-container">
+            <div class="logo-container">
                 <a href="#">
                     <img src="image/logo-2.png" alt="Logo de la tienda">
                 </a>
             </div>
 
-            <form role="search" class="search-form">
+            <form role="search" class="formulario-container">
                 <div class="search-container">
                     <span class="material-symbols-outlined" id="search-icon">search</span>
                     <input class="search-input" type="search" placeholder="Buscar productos..."
@@ -32,15 +31,13 @@
                 </div>
             </form>
 
-
-
-            <nav class="header-user-nav" aria-label="Navegación de usuario">
+            <nav class="usuario-container" aria-label="Navegación">
                 <ul>
                     <li>
-                        <a href="#">
-                            <!--<span class="material-symbols-outlined" id="account-icon">account_circle</span>-->
-                            <span>Crear Cuenta</span>
-                        </a>
+                        <a href="#"><span>Creá tu cuenta</span></a>
+                    </li>
+                    <li>
+                        <a href=""><span>Ingresá</span></a>
                     </li>
                     <li>
                         <a href="#"><span class="material-symbols-outlined" id="cart-icon">shopping_cart</span></a>
@@ -49,8 +46,12 @@
             </nav>
         </div>
 
-        <!-- Navegación principal -->
-        <nav class="header-main-nav" aria-label="Navegación principal">
+        <nav class="header-bottom-container" aria-label="Navegación">
+            <!--
+            <button class="hamburger-btn" aria-expanded="false" aria-label="Menú">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            -->
             <ul>
                 <li><a href="#">Amps</a></li>
                 <li><a href="#">Sonido</a></li>
@@ -64,104 +65,181 @@
         </nav>
     </header>
     <main>
-        <section class="banner-descuentos">
+        <section class="section-descuentos">
             <!-- Slider main container -->
             <div class="swiper swiper-descuentos">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper descuentos-container">
                     <!-- Slides -->
-                    <div class="swiper-slide tarjeta-descuento">
+                    <div class="swiper-slide card-descuento">
                         <img src="image/descuento-1.jpg" alt="imagen-descuento">
                     </div>
-                    <div class="swiper-slide tarjeta-descuento">
+                    <div class="swiper-slide card-descuento">
                         <img src="image/descuento-2.jpg" alt="imagen-descuento">
                     </div>
-                    <div class="swiper-slide tarjeta-descuento">
+                    <div class="swiper-slide card-descuento">
                         <img src="image/descuento-3.jpg" alt="imagen-descuento">
                     </div>
-                    <div class="swiper-slide tarjeta-descuento">
+                    <div class="swiper-slide card-descuento">
                         <img src="image/descuento-4.jpg" alt="imagen-descuento">
                     </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
 
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </section>
-        <section class="bienvenida-container">
-            <h2 class="mensaje">Instrumentos Musicales y Audio Profesional</h2>
+        <section class="section-bienvenida">
+            <h2>Instrumentos Musicales y Audio Profesional</h2>
         </section>
-        <section class="banner-informacion">
-            <div class="swiper swiper-informacion">
-                <div class="swiper-wrapper informacion-container">
-                    <div class="swiper-slide tarjeta-informacion">
-                        <div class="columna-icono">
-                            <span class="material-symbols-outlined" id="shipping-icon">local_shipping</span>
-                        </div>
-                        <div class="columna-descripcion">
-                            <h3>ENVIOS</h3>
-                            <p>Realizamos envíos a todo el País de todos nuestros productos. También podés retirar en
-                                nuestro Showroom de Microcentro, CABA.</p>
-                        </div>
+        <section class="section-informacion">
+            <div class="informacion-container">
+                <div class="card-informacion">
+                    <div class="columna-icono">
+                        <span class="material-symbols-outlined" id="shipping-icon">local_shipping</span>
                     </div>
-                    <div class="swiper-slide tarjeta-informacion">
-                        <div class="columna-icono">
-                            <span class="material-symbols-outlined" id="card-icon">credit_card</span>
-                        </div>
-                        <div class="columna-descripcion">
-                            <h3>CUOTAS SIN INTERES</h3>
-                            <p>Podés abonar hasta 9 cuotas sin interés en todos nuestros productos. Podés combinar
-                                tarjetas para tus pagos para aumentar tu poder de compra.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide tarjeta-informacion">
-                        <div class="columna-icono">
-                            <span class="material-symbols-outlined" id="lock-icon">lock</span>
-                        </div>
-                        <div class="columna-descripcion">
-                            <h3>COMPRA SEGURA</h3>
-                            <p>Somos representantes y distribuidores oficiales de las marcas más importantes del
-                                mercado. Todos los productos tienen garantía oficial.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide tarjeta-informacion">
-                        <div class="columna-icono">
-                            <i class="fa-brands fa-whatsapp fa-xl" id="whatsapp-icon"></i>
-                        </div>
-                        <div class="columna-descripcion">
-                            <h3>ASESORAMIENTO</h3>
-                            <p>Comunicate con nuestro Whatsapp para asesorarte con nuestros ingenieros de venta para
-                                elegir el productos que buscas.</p>
-                        </div>
+                    <div class="columna-descripcion">
+                        <h3><strong>ENVIOS</strong></h3>
+                        <p>Realizamos envíos a todo el País de todos nuestros productos. También podés retirar en
+                            nuestro Showroom de Microcentro, CABA.</p>
                     </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
+                <div class="card-informacion">
+                    <div class="columna-icono">
+                        <span class="material-symbols-outlined" id="card-icon">credit_card</span>
+                    </div>
+                    <div class="columna-descripcion">
+                        <h3><strong>CUOTAS SIN INTERES</strong></h3>
+                        <p>Podés abonar hasta 9 cuotas sin interés en todos nuestros productos. Podés combinar
+                            tarjetas para tus pagos para aumentar tu poder de compra.</p>
+                    </div>
+                </div>
+                <div class="card-informacion">
+                    <div class="columna-icono">
+                        <span class="material-symbols-outlined" id="lock-icon">lock</span>
+                    </div>
+                    <div class="columna-descripcion">
+                        <h3><strong>COMPRA SEGURA</strong></h3>
+                        <p>Somos representantes y distribuidores oficiales de las marcas más importantes del
+                            mercado. Todos los productos tienen garantía oficial.</p>
+                    </div>
+                </div>
+                <div class="card-informacion">
+                    <div class="columna-icono">
+                        <i class="fa-brands fa-whatsapp fa-xl" id="whatsapp-icon"></i>
+                    </div>
+                    <div class="columna-descripcion">
+                        <h3><strong>ASESORAMIENTO</strong></h3>
+                        <p>Comunicate con nuestro Whatsapp para asesorarte con nuestros ingenieros de venta para
+                            elegir el productos que buscas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-marcas">
+            <div class="swiper swiper-marcas">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper marcas-container">
+                    <!-- Slides -->
+                    <div class="swiper-slide card-marca">
+                        <img src="image/marca-1.png" alt="imagen-marca">
+                    </div>
+                    <div class="swiper-slide card-marca">
+                        <img src="image/marca-2.png" alt="imagen-marca">
+                    </div>
+                    <div class="swiper-slide card-marca">
+                        <img src="image/marca-3.png" alt="imagen-marca">
+                    </div>
+                    <div class="swiper-slide card-marca">
+                        <img src="image/marca-4.png" alt="imagen-marca">
+                    </div>
+                    <div class="swiper-slide card-marca">
+                        <img src="image/marca-5.png" alt="imagen-marca">
+                    </div>
+                    <div class="swiper-slide card-marca">
+                        <img src="image/marca-6.png" alt="imagen-marca">
+                    </div>
+                    <div class="swiper-slide card-marca">
+                        <img src="image/marca-7.png" alt="imagen-marca">
+                    </div>
+                </div>
 
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </section>
-        <section class="productos-container">
-            <h2 class="titulo-productos">Productos mas vendidos</h2>
-            <div class="mas-vendidos">
-                <div class="tarjeta-producto">
-                    <img src="" alt="">
+        <section class="section-ofertas">
+            <h2>Ofertas</h2>
+            <div class="ofertas-container">
+                <div class="card-oferta">
+                    <img src="image/oferta-1.webp" alt="">
+                    <div class="item-descripcion">
+                        <h3>Guitarra Acustica Fender 097-011-5021 CD-60S Dread LH Zurdo</h3>
+                        <p class="off">15% de descuento</p>
+                        <p class="precio">$290.996,94</p>
+                        <p class="medio-pago">$247.347,40 con Transferencia o depósito</p>
+                        <p class="intereses">6 x $48.499,49 sin interés</p>
+                    </div>
+                    <form class="formulario" action="">
+                        <button type="submit" class="boton">comprar</button>
+                    </form>
                 </div>
-                <div class="tarjeta-producto">
-                    <img src="" alt="">
+                <div class="card-oferta">
+                    <img src="image/oferta-2.webp" alt="">
+                    <div class="item-descripcion">
+                        <h3>Guitarra electrica Yamaha RSP02T SBL Revstar Professional Estuche</h3>
+                        <p class="off">15% de descuento</p>
+                        <p class="precio">$6.484.381,98</p>
+                        <p class="medio-pago">$5.511.724,68 con Transferencia o depósito</p>
+                        <p class="intereses">6 x $1.080.730,33 sin interés</p>
+                    </div>
+                    <form action="">
+                        <button type="submit">comprar</button>
+                    </form>
                 </div>
-                <div class="tarjeta-producto">
-                    <img src="" alt="">
+                <div class="card-oferta">
+                    <img src="image/oferta-3.webp" alt="">
+                    <div class="item-descripcion">
+                        <h3>Guitarra Electrica Gretsch Electromatic G5220 Jet Bt Casino</h3>
+                        <p class="off">15% de descuento</p>
+                        <p class="precio">$1.663.787,93</p>
+                        <p class="medio-pago">$1.414.219,74 con Transferencia o depósito</p>
+                        <p class="intereses">6 x $277.297,99 sin interés</p>
+                    </div>
+                    <form action="">
+                        <button type="submit">comprar</button>
+                    </form>
                 </div>
-                <div class="tarjeta-producto">
-                    <img src="" alt="">
+                <div class="card-oferta">
+                    <img src="image/oferta-4.webp" alt="">
+                    <div class="item-descripcion">
+                        <h3>Guitarra Electrica Squier By Fender Bullet Stratocaster Fiesta</h3>
+                        <p class="off">15% de descuento</p>
+                        <p class="precio">$630.768,60</p>
+                        <p class="medio-pago">$536.153,31 con Transferencia o depósito</p>
+                        <p class="intereses">6 x $105.128,10 sin interés</p>
+                    </div>
+                    <form action="">
+                        <button type="submit">comprar</button>
+                    </form>
+                </div>
+                <div class="card-oferta">
+                    <img src="image/oferta-5.webp" alt="">
+                    <div class="item-descripcion">
+                        <h3>Bajo Fender Telecaster Bass Modern Player 2 Humbucker 503</h3>
+                        <p class="off">15% de descuento</p>
+                        <p class="precio">$1.764.287,55</p>
+                        <p class="medio-pago">$1.499.644,42 con Transferencia o depósito</p>
+                        <p class="intereses">6 x $294.047,93 sin interés</p>
+                    </div>
+                    <form action="link_forms_pre" method="post">
+                        <button type="submit">comprar</button>
+                    </form>
                 </div>
             </div>
+            <a href="#">ver más</a>
         </section>
     </main>
     <footer>

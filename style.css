@@ -7,9 +7,16 @@
     /* #2a0441 */
     --color-fondo: #07000e;
     /* #190c25 */
+    --font-input: 18px;
+
+    --font-titulo-card: 16px;
+
+    --font-descripcion: 12px;
+
+    --font-titulo: 28px;
 }
 
-/* Reset y estilos base */
+/*==========RESET Y ESTILOS BASE==========*/
 * {
     margin: 0;
     padding: 0;
@@ -21,33 +28,60 @@ body {
     background-color: var(--color-fondo);
 }
 
-
-/*PRIMERA PARTE DE LA PAGINA WEB*/
-
-/* Header principal */
-.header-container {
-    background-color: var(--color-header);
-}
-
-/* Parte superior del header */
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    max-width: 1356px;
+header,
+main,
+footer {
+    max-width: 1357px;
     margin: 0 auto;
 }
 
-/* Logo */
-.header-logo img {
-    width: 180px;
-    max-width: 100%;
-    height: auto;
+header {
+    background-color: #07000e;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
-/* Barra de busqueda*/
-.search-container {
+/*==========HEADER TOP==========*/
+.header-top-container {
+    padding: 1rem 0;
+}
+
+.header-top-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+/*GRID EN COLUMNA UNO, DOS Y TRES*/
+.header-top-container .logo-container a,
+.header-top-container .logo-container a img {
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+
+.header-top-container .formulario-container,
+.header-top-container .usuario-container,
+.header-top-container .usuario-container ul,
+.header-top-container .usuario-container ul li a {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.header-top-container .usuario-container ul {
+    list-style-type: none;
+    gap: 30px;
+}
+
+.header-top-container .usuario-container ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*BARRA DE BUSQUEDA*/
+.header-top-container .formulario-container .search-container {
     width: max-content;
     display: flex;
     align-items: center;
@@ -57,11 +91,11 @@ body {
     transition: box-shadow 0.25s;
 }
 
-.search-container::focus-within {
+.header-top-container .formulario-container .search-container::focus-within {
     box-shadow: 0 0 2px var(--color-header);
 }
 
-.search-input {
+.header-top-container .formulario-container .search-container .search-input {
     font-size: 18px;
     font-family: 'Lexend', sans-serif;
     color: #333333;
@@ -73,47 +107,20 @@ body {
     border: transparent;
 }
 
-.search-input::placeholder,
-#search-icon {
+.header-top-container .formulario-container .search-container .search-input::placeholder,
+.header-top-container .formulario-container .search-container .search-input #search-icon {
     color: var(--color-header);
 }
 
-/* Redes sociales */
-/*.header-social {
-    display: flex;
-    gap: 1rem;
-}
 
-.header-social a {
-    display: block;
-    width: 32px;
-    height: 32px;
-}*/
-
-/* Navegacion de usuario */
-.header-user-nav ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-.header-user-nav ul li a {
-    display: flex;
-    gap: 5px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-
-
-/* Navegacion principal */
-.header-main-nav {
+/*==========HEADER BOTTOM==========*/
+.header-bottom-container {
     background-color: var(--color-nav);
-    padding: 1rem;
+    padding: 1rem 0;
     text-transform: uppercase;
 }
 
-.header-main-nav ul {
+.header-bottom-container ul {
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -122,202 +129,276 @@ body {
     margin: 0 auto;
 }
 
-.header-main-nav a {
+.header-bottom-container a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
+    border: transparent;
+    transition: all 0.3s;
 }
 
-
-
-/*PARTE DOS DE LA PAGINA WEB*/
-
-/*Descuentos*/
-
-/* Contenedor principal */
-.banner-descuentos {
-  padding: 2rem 0;
+.header-bottom-container a:hover {
+    border-bottom: 3px solid #3b04d480;
+    /*#ffffff83*/
 }
 
-/* swiper descuentos*/
-.swiper-descuentos {
-  
-  position: relative;
-  max-width: 1356px;
-  margin: 0 auto;
-  overflow: hidden;
-  height: auto;
-  padding: 0 20px;
+/*==========MAIN SECTION DESCUENTOS==========*/
+
+.section-ofertas,
+.section-marcas,
+.section-descuentos {
+    padding: 2rem 0;
 }
 
-/* contenedor de slides*/
-.swiper-descuentos .swiper-wrapper {
-  box-sizing: border-box;
-  height: 100%;
-  align-items: stretch;
+.section-descuentos .swiper-descuentos {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 380px;
 }
 
-/* Tarjetas de descuento*/
-.tarjeta-descuento {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+.section-descuentos .swiper-descuentos .descuentos-container {
+    box-sizing: border-box;
+    height: 100%;
+    align-items: stretch;
 }
 
-.tarjeta-descuento:hover {
-  transform: scale(0.98); /* Efecto hover sutil */
+.section-descuentos .swiper-descuentos .descuentos-container .card-descuento {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.tarjeta-descuento img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  aspect-ratio: 16/9;
+.section-descuentos .swiper-descuentos .descuentos-container .card-descuento:hover {
+    transform: scale(0.98);
 }
 
-/* Flechas del swiper*/
-.swiper-button-next,
-.swiper-button-prev {
-  width: 40px;
-  height: 40px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  color: white;
-  transition: opacity 0.3s ease;
+.section-descuentos .swiper-descuentos .descuentos-container .card-descuento img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*mantiene la relacion de aspecto*/
+    object-fit: contain;
+    object-position: center;
+    aspect-ratio: 16/9;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 24px;
+/*flechitas*/
+.section-descuentos .swiper-descuentos .swiper-button-prev,
+.section-descuentos .swiper-descuentos .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #ffffff;
+    transition: opacity 0.3s ease;
 }
 
-/* Bullets del swiper*/
-.swiper-pagination-bullet {
-  background: #ccc;
-  opacity: 1;
-  width: 10px;
-  height: 10px;
+.section-descuentos .swiper-descuentos .swiper-button-prev::after,
+.section-descuentos .swiper-descuentos .swiper-button-next::after {
+    font-size: 24px;
 }
 
-.swiper-pagination-bullet-active {
-  background: #2a5ee7;
+/*bullets o paginas*/
+/*.section-descuentos .swiper-descuentos .swiper-pagination-bullet {
+    background-color: #cccccc;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
 }
 
-
-/*PARTE 3, BANNER DE SALUDO*/
-.bienvenida-container {
-
+.section-descuentos .swiper-descuentos .swiper-pagination-bullet-active {
+    background-color: #2a5ee7;
+}
+*/
+/*==========MAIN SECTION BIENVENIDA==========*/
+.section-bienvenida {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding-top: 25px;
+    padding-bottom: 2rem;
     margin: 0 auto;
     max-width: 1356px;
 }
 
-.mensaje {
+.section-bienvenida h2 {
     color: #ffffff;
-    font-size: 28px;
+    font-size: var(--font-titulo);
 }
 
-/* PARTE 4 BANNER DE INFORMACION */
-.banner-informacion {
+/*==========MAIN SECTION INFORMACION==========*/
+.section-informacion {
     width: 100%;
-    max-width: 1356px;
-    margin: 0 auto;
-    padding: 20px;
+    height: 200px;
+    padding: 2rem 0;
 }
 
-.banner-informacion .swiper-informacion {
-    position: relative;
-    overflow: visible;
-    max-width: 1356px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 8px;
+.section-informacion .informacion-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
 }
 
-/* Contenedor de tarjetas */
-.banner-informacion .swiper-informacion .informacion-container {
+.section-informacion .informacion-container .card-informacion,
+.section-informacion .informacion-container .card-informacion .columna-descripcion {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 100%;
-    transform: none;
-    position: relative;
-    left: 0;
 }
 
-/* Tarjeta */
-.banner-informacion .swiper-slide.tarjeta-informacion {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background: var(--color-fondo);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px #ffffff2a;
+.section-informacion .informacion-container .card-informacion {
+    align-items: center;
+    color: #ffffff;
     padding: 15px;
-    width: 23.5%;
-    min-width: 0;
-    height: auto;
-    margin: 0;
+    box-shadow: 0 2px 10px #ffffff2a;
+    border-radius: 8px;
+    height: 135px;
+    gap: 14px;
 }
 
-/* Icono */
-.columna-icono {
-    margin-right: 14px;
-    flex-shrink: 0;
+.section-informacion .informacion-container .card-informacion .columna-descripcion {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
-.columna-descripcion {
-    flex: 1;
-    min-width: 0;
+.section-informacion .informacion-container .card-informacion .columna-icono {
+    align-self: start;
 }
 
-.columna-icono .material-symbols-outlined,
-.columna-icono #whatsapp-icon {
-    font-size: 25px;
-    color: #2a5ee7;
+.section-informacion .informacion-container .card-informacion .columna-descripcion h3 {
+    font-size: 14px;
 }
 
-.columna-descripcion h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    /*color: #333;*/
-    color: #ffffff;
-    white-space: normal;
-}
-
-.columna-descripcion p {
+.section-informacion .informacion-container .card-informacion .columna-descripcion p {
     font-size: 12px;
-    line-height: 1.4;
-    /*color: #666;*/
-    color: #ffffff;
-    margin: 0;
-    white-space: normal;
+    display: flex;
+    justify-content: end;
 }
 
-/* Quita las flechas del swiper y lo demas */
-.banner-informacion .swiper-pagination,
-.banner-informacion .swiper-button-prev,
-.banner-informacion .swiper-button-next {
-    display: none !important;
-}
-
-/* PARTE DE LOS PRODUCTOS */
-.titulo-productos{
-    color: white;
-    max-width: 1356px;
+/*==========MAIN SECTION MARCAS==========*/
+.section-marcas .swiper-marcas {
+    position: relative;
+    width: 100%;
     margin: 0 auto;
-    padding: 2rem 2rem;
+    overflow: hidden;
+    height: 250px;
+}
+
+.section-marcas .swiper-marcas .marcas-container {
+    box-sizing: border-box;
+    height: 100%;
+    align-items: stretch;
+}
+
+.section-marcas .swiper-marcas .marcas-container .card-marca {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.section-marcas .swiper-marcas .marcas-container .card-marca:hover {
+    transform: scale(0.98);
+}
+
+.section-marcas .swiper-marcas .marcas-container .card-marca img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*mantiene la relacion de aspecto*/
+    object-fit: contain;
+    object-position: center;
 }
 
 
+/*flechitas*/
+.section-marcas .swiper-marcas .swiper-button-prev,
+.section-marcas .swiper-marcas .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #ffffff;
+    transition: opacity 0.3s ease;
+}
+
+.section-marcas .swiper-marcas .swiper-button-prev::after,
+.section-marcas .swiper-marcas .swiper-button-next::after {
+    font-size: 24px;
+}
+
+/*==========MAIN SECTION OFERTAS==========*/
+.section-ofertas h2 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.section-ofertas .ofertas-container {
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.section-ofertas .ofertas-container .card-oferta {
+    color: #ffffff;
+    padding: 8px;
+    box-shadow: 0 2px 10px #ffffff2a;
+    cursor: pointer;
+}
+
+.section-ofertas .ofertas-container .card-oferta img {
+    width: 100%;
+}
+
+.section-ofertas .ofertas-container .card-oferta .item-descripcion .off,
+.section-ofertas .ofertas-container .card-oferta .item-descripcion .intereses {
+    color: red;
+    font-size: 12px;
+    font-weight: 100;
+    padding: 4px 0;
+}
+
+.section-ofertas .ofertas-container .card-oferta .item-descripcion .precio {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.section-ofertas .ofertas-container .card-oferta .item-descripcion h3,
+.section-ofertas .ofertas-container .card-oferta .item-descripcion .medio-pago {
+    padding: 4px 0;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.section-ofertas .ofertas-container .card-oferta form {
+    display: flex;
+    justify-content: center;
+}
+
+.section-ofertas .ofertas-container .card-oferta form button {
+    background-color: #3b04d480;
+    font-size: 16px;
+    color: white;
+    border: none;
+    padding: 8px 30%;
+    cursor: pointer;
+}
+
+.section-ofertas a {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
