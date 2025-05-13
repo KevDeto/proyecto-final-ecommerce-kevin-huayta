@@ -337,12 +337,14 @@ header {
     font-size: 24px;
 }
 
-/*==========MAIN SECTION OFERTAS==========*/
+/*==========MAIN SECTION OFERTAS Y MAS VENDIDOS==========*/
+.section-mas-vendidos h2,
 .section-ofertas h2 {
     color: #ffffff;
     font-size: 24px;
 }
 
+.section-mas-vendidos .mas-vendidos-container,
 .section-ofertas .ofertas-container {
     padding: 2rem 0;
     display: grid;
@@ -350,6 +352,7 @@ header {
     gap: 20px;
 }
 
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido,
 .section-ofertas .ofertas-container .card-oferta {
     color: #ffffff;
     padding: 8px;
@@ -357,10 +360,13 @@ header {
     cursor: pointer;
 }
 
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido img,
 .section-ofertas .ofertas-container .card-oferta img {
     width: 100%;
 }
 
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido .item-descripcion .off,
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido .item-descripcion .intereses,
 .section-ofertas .ofertas-container .card-oferta .item-descripcion .off,
 .section-ofertas .ofertas-container .card-oferta .item-descripcion .intereses {
     color: red;
@@ -369,11 +375,21 @@ header {
     padding: 4px 0;
 }
 
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido .item-descripcion .precio,
 .section-ofertas .ofertas-container .card-oferta .item-descripcion .precio {
     font-weight: 600;
     font-size: 18px;
 }
 
+.section-ofertas .ofertas-container .card-oferta .item-descripcion .precio del {
+    padding: 4px 10px;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido .item-descripcion h3,
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido .item-descripcion .medio-pago,
 .section-ofertas .ofertas-container .card-oferta .item-descripcion h3,
 .section-ofertas .ofertas-container .card-oferta .item-descripcion .medio-pago {
     padding: 4px 0;
@@ -381,11 +397,13 @@ header {
     font-size: 12px;
 }
 
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido form,
 .section-ofertas .ofertas-container .card-oferta form {
     display: flex;
     justify-content: center;
 }
 
+.section-mas-vendidos .mas-vendidos-container .card-mas-vendido form button,
 .section-ofertas .ofertas-container .card-oferta form button {
     background-color: #3b04d480;
     font-size: 16px;
@@ -395,6 +413,7 @@ header {
     cursor: pointer;
 }
 
+.section-mas-vendidos a,
 .section-ofertas a {
     color: white;
     display: flex;
