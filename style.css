@@ -145,6 +145,8 @@ header {
 
 /*==========MAIN SECTION DESCUENTOS==========*/
 
+.section-nosotros,
+.section-mas-vendidos,
 .section-ofertas,
 .section-marcas,
 .section-descuentos {
@@ -413,11 +415,89 @@ header {
     cursor: pointer;
 }
 
-.section-mas-vendidos a,
-.section-ofertas a {
-    color: white;
+/*==========INFORMACION SOBRE EL LOCAL==========*/
+
+
+.section-nosotros h2,
+.section-nosotros p {
     display: flex;
     justify-content: center;
+    text-align: center;
+}
+
+.section-nosotros h2 {
+    color: white;
+    font-size: 28px;
+}
+
+.section-nosotros p {
+    color: white;
+    margin: 2rem 16rem;
+    font-size: 16px;
+}
+
+.section-nosotros .tienda-container {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.section-nosotros .tienda-container img {
+    height: 390px;
+    width: 625px;
+}
+
+/*======FOOTER========*/
+.footer-container {
+    padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.349);
+    max-width: 100%;
+}
+
+.footer-container .links {
+    margin: 0 auto;
+    max-width: 1356px;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.footer-container .links nav ul {
+    list-style: none;
+}
+
+.footer-container .links nav h2,
+.footer-container .links nav ul li {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.footer-container .links nav ul li a {
+    color: white;
     text-decoration: none;
-    cursor: pointer;
+    font-size: 14px;
+}
+
+.footer-container .links .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.footer-container .logo-container img {
+    width: 200px;
+}
+
+.footer-container .footer-copy {
+    margin: 0 auto;
+    max-width: 1356px;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container .footer-copy p {
+    margin: 4rem 0 2rem 0;
+    font-size: 12px;
 }
